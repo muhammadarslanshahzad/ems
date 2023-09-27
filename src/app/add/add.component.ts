@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ServiceService } from '../shared/service.service';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-add',
@@ -16,7 +18,7 @@ export class AddComponent {
     "Master",
     "Doctrate"];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service:ServiceService, private dialogref:DialogRef<AddComponent>){
     this.empForm = this.fb.group({
       firstname: '',
       lastname: '',
@@ -33,7 +35,19 @@ export class AddComponent {
 
   onFormSubmit() {
     if (this.empForm.valid) {
-      console.warn(this.empForm.value)
+      // console.warn(this.empForm.value)
+      this.service.addEmployee(this.empForm.value).subscribe({
+        next :(val:any)=>{
+          alert("Employee has been Added! Successfully")
+          this.dialogref.close()
+        },
+        error: (err:any)=>{
+          alert(err)
+        }
+        
+      })
+
+
     }
   }
 

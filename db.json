@@ -1,0 +1,47 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "name": "typicode"
+    }
+  ],
+  "employee": [
+    {
+      "firstname": "arslan",
+      "lastname": "shahzad",
+      "email": "email@email.com",
+      "dob": "2023-09-04T19:00:00.000Z",
+      "gender": "male",
+      "education": "Bachelor",
+      "company": "codoplex",
+      "experience": 3,
+      "package": 80000,
+      "id": 1
+    },
+    {
+      "firstname": "juniad",
+      "lastname": "hassan",
+      "email": "jemail@example.com",
+      "dob": "1878-02-04T19:31:48.000Z",
+      "gender": "male",
+      "education": "Masters",
+      "company": "codoplex",
+      "experience": 8,
+      "package": 8000000,
+      "id": 2
+    }
+  ]
+}
